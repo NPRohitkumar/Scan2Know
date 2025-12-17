@@ -18,6 +18,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Scan', path: '/scan', protected: true },
+    { name: 'Compare', path: '/compare' }, // NEW
     { name: 'Info', path: '/info' },
     { name: 'Manual', path: '/manual' },
     { name: 'Contact', path: '/contact' },

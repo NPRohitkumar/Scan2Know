@@ -15,6 +15,7 @@ import ContactPage from './pages/ContactPage'
 import Login from './components/auth/Login'
 import Signup from './components/auth/Signup'
 import NotFound from './pages/NotFound'
+import ComparePage from './pages/ComparePage'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/manual" element={<ManualPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/compare" element={<ComparePage />} />
             </Routes>
           </main>
           <Footer />

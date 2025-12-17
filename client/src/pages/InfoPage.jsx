@@ -23,10 +23,15 @@ const InfoPage = () => {
     }
   }
 
-  const categories = ['all', 'dairy', 'snacks', 'beverages', 'packaged foods']
-  const filteredProducts = filter === 'all' 
+const categories = React.useMemo(() => {
+  const set = new Set(products.map(p => p.category))
+  return ['all', ...Array.from(set)]
+}, [products])
+
+
+  const filteredProducts = filter == 'all' 
     ? products 
-    : products.filter(p => p.category === filter)
+    : products.filter(p => p.category == filter)
 
   if (loading) {
     return (
@@ -53,7 +58,7 @@ const InfoPage = () => {
         </motion.div>
 
         {/* Category Filter */}
-        <div className="flex justify-center mb-8 overflow-x-auto">
+        <div className="flex justify-center mb-8 overflow-x-auto scrollbar-hide">
           <div className="glass p-2 rounded-full inline-flex space-x-2">
             {categories.map((category) => (
               <button
@@ -126,11 +131,11 @@ const InfoPage = () => {
                   ? 'bg-yellow-100 text-yellow-700'
                   : 'bg-green-100 text-green-700'
               }`}>
-                {product.severityCounts.high > 2
+                {product.severityCounts.high > 1
                   ? 'Not Recommended'
-                  : product.severityCounts.medium > 3
+                  : product.severityCounts.medium > 0
                   ? 'Consume Moderately'
-                  : 'Generally Safe'}
+                  : 'Generally Safe'} 
               </div>
             </motion.div>
           ))}
@@ -147,3 +152,4 @@ const InfoPage = () => {
 }
 
 export default InfoPage
+

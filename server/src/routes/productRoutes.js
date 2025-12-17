@@ -4,5 +4,5 @@ const productController = require('../controllers/productController')
 
 router.post('/search', productController.searchProduct)
 router.get('/demo', productController.getDemoProducts)
-
+router.post('/compare', productController.compareProducts) // NEW
 module.exports = router  // ← IMPORTANT
