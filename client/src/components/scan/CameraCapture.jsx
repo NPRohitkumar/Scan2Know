@@ -377,6 +377,7 @@ import 'react-image-crop/dist/ReactCrop.css'
 import imageCompression from 'browser-image-compression'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import API_URL from '../../config/api'
 
 const CameraCapture = ({ onResult }) => {
   const [image, setImage] = useState(null)
@@ -534,7 +535,7 @@ const CameraCapture = ({ onResult }) => {
       const formData = new FormData()
       formData.append('image', rotatedBlob, 'product.jpg')
 
-      const result = await axios.post('http://localhost:5000/api/scan/upload', formData, {
+      const result = await axios.post(`${API_URL}/api/scan/upload`, formData, {
         headers: { 
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${localStorage.getItem('token')}`

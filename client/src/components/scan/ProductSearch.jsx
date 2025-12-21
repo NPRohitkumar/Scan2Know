@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FiSearch, FiLoader } from 'react-icons/fi'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import API_URL from '../../config/api'
 
 const ProductSearch = ({ onResult }) => {
   const [productName, setProductName] = useState('')
@@ -17,7 +18,7 @@ const ProductSearch = ({ onResult }) => {
 
     setLoading(true)
     try {
-      const response = await axios.post('/api/products/search', { productName })
+      const response = await axios.post(`${API_URL}/api/products/search`, { productName })
       if (response.data.found) {
         onResult(response.data.result)
       } else {
