@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 import { FiSearch } from 'react-icons/fi'
+import API_URL from '../config/api'
 
 const InfoPage = () => {
   const [products, setProducts] = useState([])
@@ -14,7 +15,7 @@ const InfoPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('/api/products/demo')
+      const response = await axios.get(`${API_URL}/api/products/demo`)
       setProducts(response.data.products)
     } catch (error) {
       console.error('Failed to fetch products')

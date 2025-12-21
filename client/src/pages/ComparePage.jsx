@@ -4,6 +4,7 @@ import { FiSearch, FiPlus, FiX, FiAward } from 'react-icons/fi'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import API_URL from '../config/api'
 
 const ComparePage = () => {
   const [productInputs, setProductInputs] = useState(['', ''])
@@ -40,7 +41,7 @@ const ComparePage = () => {
 
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:5000/api/products/compare', {
+      const response = await axios.post(`${API_URL}/api/products/compare`, {
         productNames: filledInputs
       })
       

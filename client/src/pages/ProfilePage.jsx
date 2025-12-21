@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FiUser, FiMail, FiCalendar, FiClock } from 'react-icons/fi'
 import { useAuth } from '../context/AuthContext'
 import axios from 'axios'
+import API_URL from '../config/api'
 
 const ProfilePage = () => {
   const { user } = useAuth()
@@ -17,8 +18,8 @@ const ProfilePage = () => {
   const fetchUserData = async () => {
     try {
       const [searchesRes, recsRes] = await Promise.all([
-        axios.get('/api/users/recent-searches'),
-        axios.get('/api/users/recommendations')
+        axios.get(`${API_URL}/api/users/recent-searches`),
+        axios.get(`${API_URL}/api/users/recommendations`)
       ])
       setRecentSearches(searchesRes.data.searches)
       setRecommendations(recsRes.data.recommendations)
