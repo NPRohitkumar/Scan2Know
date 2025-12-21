@@ -13,7 +13,7 @@ import ProfilePage from './pages/ProfilePage'
 import ManualPage from './pages/ManualPage'
 import ContactPage from './pages/ContactPage'
 import Login from './components/auth/Login'
-import Signup from './components/auth/Signup'
+import Signup from './components/auth/SignUp'
 import NotFound from './pages/NotFound'
 import ComparePage from './pages/ComparePage'
 
