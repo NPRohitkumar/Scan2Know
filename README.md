@@ -3,6 +3,7 @@
 1. Make sure you  have node Js installed on your device
 2. Run the backend Node Js server
     * go to /server directory in the terminal and run 
+    a) in the utils folder , seed the initial data [ node seed.js ]
     a) npm install
     b) node server.js
 3. Run the frontend Server
@@ -17,6 +18,7 @@
     * go to the /summarizer-service directory in the terminal and create a virtual environment first , steps are given at the end
     a) pip install -r requirements.txt
     b) python app.py
+
 
 
 
